@@ -18,7 +18,8 @@ passport.use(new GoogleStrategy(
   {
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
-    callbackURL: '/auth/google/callback'
+    callbackURL: '/auth/google/callback',
+    proxy: true // for dealing with redict to HTTP issue
   },
   // function after receive details of user from google
   function(accessToken, refreshToken, profile, done) {
